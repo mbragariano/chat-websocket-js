@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="chat">
+        <input type="text" name="txtUser" id="user" placeholder="Enter your name">
+        <div class="messages">
+          <div class="message">
+            <label class="user">Matheus</label>
+            <label class="text">Olá galera eu sou o Matheus, tudo certo com vocês?</label> 
+          </div>
+          <div class="message">
+            <label class="user">Matheus</label>
+            <label class="text">Olá galera eu sou o Matheus, tudo certo com vocês?</label> 
+          </div> 
+        </div>
+        <div class="send-area">
+          <input type="text" name="txtMessage" id="message" placeholder="Enter a message">
+          <button type="submit">Send</button>
+        </div>
+      </div>
+    </main>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+  </body>
+</html>
