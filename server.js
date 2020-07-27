@@ -1,5 +1,5 @@
-const express = require('express');
 const path = require('path');
+const express = require('express');
 
 const app = express();
 const server = require('http').createServer(app);
@@ -15,4 +15,17 @@ app.use('/', (req, res) => {
   res.render('index.html');
 });
 
-app.listen(3000, () => console.log('Server running on port 3000.'));
+const messages = [];
+
+io.on('connection', socket => {
+  console.log('Socket conectado.', socket.id);
+
+  socket.emit('previousMessages', messages);
+
+  socket.on('newMessage', data => {
+    messages.push(data);
+    socket.broadcast.emit('receivedMessage', data);
+  });
+});
+
+server.listen(3000, () => console.log('Server running on port 3000.'));
